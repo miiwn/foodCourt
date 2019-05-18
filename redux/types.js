@@ -1,0 +1,8 @@
+export const types = {
+    LOGIN_USER: 'LOGIN_USER',
+    LOGOUT_USER: 'LOGOUT_USER',
+    ADD_ITEM: 'ADD_ITEM',
+    REMOVE_ITEM: 'REMOVE_ITEM',
+    ADD_ORDER: 'ADD-ORDER',
+    CANCEL_ORDER: 'CANCEL_ORDER',
+}

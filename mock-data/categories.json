@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Appetizers",
+        "uri": "https://www.tasteofhome.com/wp-content/uploads/2018/03/Marinated-Cheese_EXPS_THCA18_41873_B01_23_3b-2-696x696.jpg"
+    },
+    {
+        "name": "Thai Food",
+        "uri": "http://bangkokhasyou.com/wp-content/uploads/2016/01/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B8%B5-10-%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%A1-%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B9%87%E0%B8%A3%E0%B8%A7%E0%B8%A2-21.jpg"
+    },
+    {
+        "name": "Italian Food",
+        "uri": "https://serafinamia.com/wp-content/uploads/2018/09/10-Italian-Fun-Facts-The-Food-Fashion-and-Culture-of-Italy.jpg"
+    },
+    {
+        "name": "Japanese Food",
+        "uri": "https://i.ndtvimg.com/i/2016-04/japanese-food-625_625x406_81461928658.jpg"
+    },
+    {
+        "name": "Drinks",
+        "uri": "https://indaily.com.au/wp-content/uploads/2018/05/Soft-drinks-Coke-850x455.jpg"
+    },
+    {
+        "name": "Dessert",
+        "uri": "https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/dinner-party-dessert-profiteroles.jpg"
+    }
+]
