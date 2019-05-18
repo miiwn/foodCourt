@@ -51,7 +51,6 @@ static navigationOptions = {
     this.props.navigation.navigate('Menu',{storeDetail: item})
   }
   render() {
-    console.log('auth', this.props.navigation.state.params.user)
     
     return (
       <ScrollView
