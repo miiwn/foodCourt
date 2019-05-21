@@ -9,9 +9,7 @@ import t from 'tcomb-form-native' ;
 const Form = t.form.Form ;
 
 const phone = t.struct({
-   name: t.String,
-   phone: t.String,
-   table: t.Number,
+   tableNo: t.Number,
 //    createDate: t.String,
 //    updateDate: t.String
 }) ;

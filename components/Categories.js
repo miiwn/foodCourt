@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, ImageBackground, Dimensions, ScrollView  } from 'react-native';
+import { View, Text, FlatList, StyleSheet, Image, ImageBackground, Dimensions, ScrollView, TouchableOpacity  } from 'react-native';
 import { Card, CardItem } from 'native-base'
 import Title from './Title';
-
 const width = Dimensions.get('window').width; //full width
 const height = Dimensions.get('window').height;
 
 class Categories extends Component {
-
+    
+   renderStore = (item)=>{
+        this.props.storeList(item)
+      }
     _renderItem=({item})=>{
-        if(item.uri){
         return (
+            <TouchableOpacity style={styles.touchable} onPress={()=>this.renderStore(item)}>
             <Card style={styles.card}>
               <CardItem cardBody style={styles.cardItem}>
               <ImageBackground
@@ -18,29 +20,28 @@ class Categories extends Component {
                style={styles.imageBg}
                imageStyle={{ 
                    borderRadius: 10,
-                    opacity: 0.6,
-                 }}
-               >
+                   opacity: 0.6,
+                }}
+                >
                 <Text style={styles.title}>
                   {item.name}
                 </Text>
               </ImageBackground>
               </CardItem>
             </Card>
+                </TouchableOpacity>
             )
-        }else{
-
         }
-    }
+    
 
 
     render() {
-        const {data} =this.props
+        const {category} =this.props
         return (
             <View style={styles.listContainer}>
                 <Title title="Explore restaurants" description="Select Restaurants by Categories" />
                 <FlatList
-                data={data}
+                data={category}
                 renderItem={this._renderItem}
                 numColumns={3}
                 keyExtractor={(item)=> item.name}
@@ -54,7 +55,14 @@ const styles = StyleSheet.create({
     listContainer:{
         marginLeft:10,
         marginRight: 10,
+        
       },
+    touchable:{
+        marginRight: 5,
+        marginLeft: 5,
+        flex:1,
+        borderRadius: 12,
+    },
     card: {
         justifyContent: 'center',
         flex:1,

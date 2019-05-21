@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { ListItem, Row, List, Left, Right, Card, CardItem } from 'native-base';
-import { toASCII } from 'punycode';
-// import console = require('console');
-
 export default class OrderList extends Component {
     constructor(props) {
         super(props);
@@ -12,15 +9,7 @@ export default class OrderList extends Component {
             total: 0
         };
     }
-    componentWillUpdate(){
-        const { orders } = this.props
-        const { total } =this.state
-        let sum = 0
-        orders.map((item,index)=>{
-            sum = item.price*item.amount
-        })
-        this.setState({total: sum})
-    }
+
     _renderItem = ({ item }) => {
         const { total } = this.state
         let sum = item.price * item.amount
@@ -39,8 +28,7 @@ export default class OrderList extends Component {
 
     }
     render() {
-        const { orders } = this.props
-        const { total } = this.state
+        const { orders,total } = this.props
 
         return (
             <View style={styles.menuList}>

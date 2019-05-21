@@ -10,7 +10,7 @@ import Description from '../components/Description';
 import OrderList from '../components/OrderList';
 import ConfirmButton from '../components/ConfirmButton';
 import ConfirmOrderModal from '../components/ConfirmOrderModal';
-import Header from '../components/Header';
+import HeaderComponent from '../components/Header';
 // import console = require('console');
 
 
@@ -20,22 +20,32 @@ const user = {
 }
 
 class OrderPage extends Component {
-    // static navigationOptions = {
-    //     title: 'Orders',
-    //     headerStyle: {
-    //       backgroundColor: '#EF9F88',
-    //     },
-    //     headerTintColor: '#fff',
-    //     headerTitleStyle: {
-    //       fontWeight: 'bold',
-    //     },
-    //   };
     constructor(props) {
         super(props);
         this.state = {
-            visible: false
+            visible: false,
+            total: 0,
         };
     }
+    componentWillMount=()=>{
+        this.focusListener = this.props.navigation.addListener("didFocus", () => {
+            this._loadTotalPrice();
+          })
+        // this._loadTotalPrice()
+    }
+    _loadTotalPrice =()=>{
+        const { orders } = this.props
+        let sum = 0
+        orders.map((item,index)=>{
+            sum += item.price*item.amount
+            if(orders.length-1===index){
+                return sum
+            }
+        })
+
+        this.setState({total: sum})
+    }
+
     confirmOrder =()=>{
         alert('confirm')
     }
@@ -44,11 +54,11 @@ class OrderPage extends Component {
     }
     render() {
         const { orders } = this.props;
-        const { visible } = this.state
+        const { visible, total } = this.state
         return (
             <View style={styles.orderContainer}>
-                <Header title='Orders' />
-                {orders.length !==0 ? <OrderList orders={orders}/>
+                <HeaderComponent title='Orders' />
+                {orders.length !==0 ? <OrderList orders={orders} total={total}/>
                 : <View style={styles.noOrderContainer}>
                     <Text style={styles.noOrder}>No order in the basket</Text>
                     </View>}
@@ -60,7 +70,7 @@ class OrderPage extends Component {
                 </Button>
                 </Row>
                 : null}
-                <ConfirmOrderModal visible={visible} onClose={this.closeModal} />
+                <ConfirmOrderModal visible={visible} order={orders} total={total} onClose={this.closeModal} />
             </View>
         );
     }

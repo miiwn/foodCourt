@@ -6,7 +6,7 @@ getProfile=async(node)=>{
     await ref.once("value")
       .then(function(snapshot) {
         snapshot.forEach((childSnapshot) =>{
-          return childSnapshot
+          return childSnapshot.val()
 
         } )
    })

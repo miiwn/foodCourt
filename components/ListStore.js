@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import Food from '../mock-data/food.json'
 import { Card, CardItem, Body, ListItem,List } from 'native-base'
 import Title from './Title.js';
 import Description from './Description.js';
 class ListStore extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
+  
   renderMenu = (item)=>{
     this.props.renderMenuList(item)
   }
@@ -28,13 +22,13 @@ class ListStore extends Component {
         )
   }
   render() {
-    const { title, description } =this.props
+    const { title, description,food} =this.props
     return (
       <View style={styles.listContainer}>
         <Title title={title} description={description} />
         <List>
           <FlatList
-            data={Food}
+            data={food}
             renderItem={this._renderItem}
             keyExtractor={(item, index) => item + index}
             showsVerticalScrollIndicator={false}

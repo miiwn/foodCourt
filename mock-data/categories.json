@@ -1,15 +1,100 @@
 [
     {
         "name": "Appetizers",
-        "uri": "https://www.tasteofhome.com/wp-content/uploads/2018/03/Marinated-Cheese_EXPS_THCA18_41873_B01_23_3b-2-696x696.jpg"
+        "uri": "https://www.tasteofhome.com/wp-content/uploads/2018/03/Marinated-Cheese_EXPS_THCA18_41873_B01_23_3b-2-696x696.jpg",
+        "storelist" : [
+            {
+                "storeName": "Meat Ball",
+                "description": "We have many kinds of steak e.g. chicken, pork, beef and some appetizers like french fries",
+                "uri" : "https://s359.kapook.com/pagebuilder/069ad63d-f4ca-4c5c-90c3-1c726933f46c.jpg",
+                "menu": [
+                    {
+                        "category": "Pork",
+                        "list" : [
+                            {
+                                "name": "Meat Ball 1pcs",
+                                "price": 10
+                            },
+                            {
+                                "name": "Meat Ball 3pcs",
+                                "price": 30
+                            }
+                        ]
+                        
+                    },
+                    {
+                        "category": "Chicken",
+                        "list" : [
+                            {
+                                "name": "Meat Ball 1pcs",
+                                "price": 10
+                            },
+                            {
+                                "name": "Meat Ball 3pcs",
+                                "price": 30
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "Thai Food",
-        "uri": "http://bangkokhasyou.com/wp-content/uploads/2016/01/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B8%B5-10-%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%A1-%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B9%87%E0%B8%A3%E0%B8%A7%E0%B8%A2-21.jpg"
+        "uri": "http://bangkokhasyou.com/wp-content/uploads/2016/01/%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%B2%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%94%E0%B8%B5-10-%E0%B8%AD%E0%B8%B1%E0%B8%99%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B8%B4%E0%B8%A2%E0%B8%A1-%E0%B9%83%E0%B8%84%E0%B8%A3%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B9%87%E0%B8%A3%E0%B8%A7%E0%B8%A2-21.jpg",
+        "storelist" : [
+            {
+                "storeName": "Papaya Salad",
+                "uri" : "https://static.trueplookpanya.com/tppy/member/m_572500_575000/572935/cms/images/%E0%B8%82%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3-%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%94%E0%B8%99%E0%B8%95%E0%B8%A3%E0%B8%B5-%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%AA%E0%B8%B9%E0%B9%89%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%95-%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%81%E0%B8%A1%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%AA%E0%B8%B9%E0%B9%88%E0%B9%80%E0%B8%88%E0%B9%89%E0%B8%B2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%98%E0%B8%B8%E0%B8%A3%E0%B8%81%E0%B8%B4%E0%B8%88%E0%B8%AB%E0%B8%A5%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2-6.jpg",
+                "menu": [
+                    {
+                        "category": "Pork",
+                        "list": [
+                            {
+                                "name": "Papaya Salad",
+                                "price": 40
+                            },
+                            {
+                                "name": "Corn Salad",
+                                "price": 45
+                            }
+                        ]
+                }
+                ]
+            }
+        ]
     },
     {
         "name": "Italian Food",
-        "uri": "https://serafinamia.com/wp-content/uploads/2018/09/10-Italian-Fun-Facts-The-Food-Fashion-and-Culture-of-Italy.jpg"
+        "uri": "https://serafinamia.com/wp-content/uploads/2018/09/10-Italian-Fun-Facts-The-Food-Fashion-and-Culture-of-Italy.jpg",
+        "storelist" : [
+            {
+                "storeName": "Steak Ta To",
+                "category": "steak",
+                "description": "We have many kinds of steak e.g. chicken, pork, beef and some appetizers like french fries",
+                "uri": "https://img.wongnai.com/p/400x0/2018/12/10/cc30d4b67cda4e2a90b8868b34fb26cb.jpg",
+                "menu": [
+                    {
+                        "category": "Pork",
+                        "list":[
+                            {
+                            "name": "Pork Steak with Barbecue Sauce",
+                            "price": 60
+                            }
+                        ]
+                    },
+                    {
+                        "category": "Chicken",
+                        "list":[
+                            {
+                            "name": "Chicken Steak with Cream Sauce",
+                            "price": 55
+                            }
+                        ]
+                    }
+                ]      
+            }
+        ]
     },
     {
         "name": "Japanese Food",

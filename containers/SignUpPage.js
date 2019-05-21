@@ -12,15 +12,18 @@ handleSignUp = () => {
     const { email, password, firstName, lastName, phoneNumber } =value
     
   auth.createUserWithEmailAndPassword(email,password)
-      .then((auth) => 
-      db.ref(`/users/${auth.user.uid}/profile`).push({
-        email: email,
-        firstname: firstName,
-        lastname: lastName,
-        phoneNumber: phoneNumber,
-      }))
+      .then((auth) => {
+        db.ref(`/users/${auth.user.uid}/profile`).push({
+          email: email,
+          firstname: firstName,
+          lastname: lastName,
+          phoneNumber: phoneNumber,
+        })
+        this.props.navigation.navigate('Login')
+      }
+      )
       .catch(error => this.setState({ errorMessage: error.message }))
-      this.props.navigation.navigate('Login')
+      
   console.log('handleSignUp')
 }
 render() {
@@ -52,14 +55,8 @@ render() {
               <Text style={styles.signUpText}>Sign Up</Text>
             </Button>
               </Col>
-
             </Row>
             </View>
-        {/* <Button title="Sign Up" onPress={this.handleSignUp} />
-        <Button
-          title="Already have an account? Login"
-          onPress={() => this.props.navigation.navigate('Login')}
-        /> */}
       </View>
     )
   }

@@ -20,7 +20,7 @@ class HeadCard extends Component {
             imageStyle={{ borderRadius: 10 }}
           >
             <Text style={styles.title}>
-              Welcome ! {user.nickname}
+              Welcome ! {user.firstname}
           </Text>
           </ImageBackground>
         </CardItem>

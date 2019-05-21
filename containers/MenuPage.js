@@ -64,12 +64,7 @@ class MenuPage extends Component {
       })
     }
   }
-  // addOrder=(selected,amount)=>{
-  //   this.setState({ selected,value:amount})
-  
-    
 
-  // }
   addValue = () => {
     let add = Number.parseInt(this.state.value, 10) + 1
     let addText = add.toString()

@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Animated, Image, TouchableOpacity} from 'react-native';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux' ;
+import { actionCreators } from '../redux/actions/actionCreators' ; 
 import t from 'tcomb-form-native' ;
 import { Button, Text  } from 'native-base'
 import {auth} from '../providers/FirebaseProvider'
 import { Form, login , loginOptions } from '../components/LoginForm'
 
-export default class LoginPage extends Component {
+ class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +18,7 @@ export default class LoginPage extends Component {
       progress: new Animated.Value(0),
     };
   }
+  
   handleLogin = () => {
     const value = this.refs._form.getValue()
     const { email, password } =value
@@ -23,6 +27,7 @@ export default class LoginPage extends Component {
       .catch(error => this.setState({ errorMessage: error.message }))
     // TODO: Firebase stuff...
     console.log('handleLogin')
+
   }
 
 
@@ -87,3 +92,11 @@ const styles = StyleSheet.create({
       color: '#FFF'
     }
 });
+const mapStateToProps = (state) => ({
+  // items: state.items,
+ }) 
+ const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(actionCreators,dispatch) ;
+ } 
+
+ export default connect(mapStateToProps,mapDispatchToProps)(LoginPage)

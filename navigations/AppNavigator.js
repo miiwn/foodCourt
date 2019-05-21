@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, createBottomTabNavigator, createMaterialTopTabNavigator, createDrawerNavigator, createAppContainer, createSwitchNavigator } from 'react-navigation';
 import HomePage from '../containers/HomePage';
 import MenuPage from '../containers/MenuPage';
@@ -9,6 +9,7 @@ import LoginPage from '../containers/LoginPage';
 import SignUpPage from '../containers/SignUpPage';
 import Loading from '../containers/Loading';
 import ProfilePage from '../containers/ProfilePage';
+import StorePage from '../containers/StorePage';
 
 
 
@@ -32,6 +33,9 @@ const TabNavigator = createBottomTabNavigator(
     Home: {
       screen: AppNavigator
     },
+    Store: {
+      screen: StorePage
+    },
     Order:{
       screen: OrderPage
     },
@@ -44,11 +48,17 @@ const TabNavigator = createBottomTabNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
-        let IconComponent = SimpleLineIcons;
+        let IconComponent = FontAwesome;
         let iconName;
         if (routeName === 'Home') {
           iconName = `home`;
-         } 
+         } else if(routeName==='Store'){
+           iconName = 'list-alt'
+         }else if(routeName ==='Order'){
+           iconName ='list'
+         } else if(routeName ==='Profile'){
+           iconName ='user'
+         }
 
         // You can return any component that you like here!
         return <IconComponent name={iconName} size={20} color={tintColor} />;
@@ -105,7 +115,7 @@ const SwitchApp = createSwitchNavigator(
 //   }
 // );
 
-const AppContainer = createAppContainer(TabNavigator);
+const AppContainer = createAppContainer(SwitchApp);
 const styles = StyleSheet.create({
   logo: {
     width: 40,

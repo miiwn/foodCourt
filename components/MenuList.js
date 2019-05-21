@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, TouchableOpacity } from 'react-native';
-import { Row, Col, Icon, List, ListItem, Right, Left, Button, Form, Item, Label, Input, Fab } from 'native-base';
-import Dialog, { DialogContent, DialogButton, DialogFooter } from 'react-native-popup-dialog';
-import Title from './Title';
-import { TextInput } from 'react-native-gesture-handler';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { Row, List, ListItem, Right, Left} from 'native-base';
 import { db } from '../providers/FirebaseProvider';
-import ConfirmOrderModal from './ConfirmOrderModal';
 
 let addItem = (menu, amount) => {
   db.ref('/users/miiwn/order').push({
