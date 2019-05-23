@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   headerimg: {
     width: width,
-    height: 150
+    height: 180
   }
 });
 const mapStateToProps = (state) => ({

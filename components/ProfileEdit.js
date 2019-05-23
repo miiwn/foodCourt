@@ -41,6 +41,7 @@ export default class ProfileEdit extends Component {
                             style={styles.call}
                             onChangeText={text => this.props.changePhone(text)}
                             keyboardType={'numeric'}
+                            
                         />
                     </Body>
                 </ListItem>

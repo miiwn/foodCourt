@@ -55,7 +55,6 @@ export default class ProfilePage extends Component {
   }
   confirmChangeProfile = () => {
     const { newPhone } = this.state
-    if(newPhone==''){
       try {
       const ref = db.ref(`/users/${auth.currentUser.uid}/profile`)
       ref.once("value")
@@ -70,7 +69,7 @@ export default class ProfilePage extends Component {
           ))
     } catch (error) {
       console.log(error.message)
-    }}
+    }
 
     this.setState({ editable: false })
   }
