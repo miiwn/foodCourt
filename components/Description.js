@@ -3,16 +3,16 @@ import { View, Text, StyleSheet } from 'react-native'
 
 
 export default class Description extends Component {
-    
-    render() {
-        const {description} = this.props
-        
-        return (
-            <View>
+
+  render() {
+    const { description } = this.props
+
+    return (
+      <View>
         <Text style={styles.description}>{description}</Text>
       </View>
     )
-}
+  }
 }
 
 const styles = StyleSheet.create({
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '300',
   },
-  description:{
+  description: {
     fontSize: 12,
     textAlign: 'left',
     fontWeight: '300',

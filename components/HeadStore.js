@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, ImageBackground,Dimensions} from 'react-native';
-import Food from '../mock-data/food.json'
+import { View, Text, StyleSheet } from 'react-native';
 import { Card, CardItem } from 'native-base'
-import Description from './Description.js';
-
-const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height;
 
 class HeadStore extends Component {
 
   render() {
-    const { storeName, description } =this.props
+    const { storeName, description } = this.props
     return (
       <View style={styles.cardContainer}>
-      <Card style={styles.card}>
-        <CardItem cardBody style={styles.cardItem}>
+        <Card style={styles.card}>
+          <CardItem cardBody style={styles.cardItem}>
             <Text style={styles.title}>
-                {storeName}
+              {storeName}
             </Text>
-        </CardItem>
-      </Card>
+          </CardItem>
+        </Card>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  cardContainer:{
-    justifyContent: 'flex-start', 
-    alignItems:'stretch'
+  cardContainer: {
+    justifyContent: 'flex-start',
+    alignItems: 'stretch'
   },
   card: {
     // width: width+10,
@@ -53,7 +48,7 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '700',
     padding: 20,
-    flexDirection:'row'
+    flexDirection: 'row'
 
   },
 })

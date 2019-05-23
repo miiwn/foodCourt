@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, Image, ImageBackground,Dimensions} from 'react-native';
-import Food from '../mock-data/food.json'
+import { View, Text,  StyleSheet,  ImageBackground,Dimensions} from 'react-native';
 import { Card, CardItem } from 'native-base'
 
 const width = Dimensions.get('window').width; //full width
-const height = Dimensions.get('window').height;
+
 
 class HeadCard extends Component {
 

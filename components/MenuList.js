@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { Row, List, ListItem, Right, Left} from 'native-base';
+import { Row, List, ListItem, Right, Left } from 'native-base';
 import { db } from '../providers/FirebaseProvider';
 
 let addItem = (menu, amount) => {
@@ -29,7 +29,7 @@ export default class MenuList extends Component {
   }
 
   _renderItem = ({ item }) => {
-    const {value} =this.state
+    const { value } = this.state
     return (
       <View style={styles.list}>
         <ListItem itemDivider>
@@ -41,7 +41,7 @@ export default class MenuList extends Component {
           <ListItem
             key={index}
             onPress={() =>
-              this.props.showDialog(true,menu,value)
+              this.props.showDialog(true, menu, value)
             }>
             <Left style={styles.nameContainer}>
               <Text>{menu.name}</Text>

@@ -7,13 +7,14 @@ export const actionCreators = {
             payload: email
         }
     },
-    addItem: (storeName,menu,amount) => {
+    addItem: (storeName,menu,amount,note) => {
         return {
             type: types.ADD_ITEM,
             payload: {
                 storeName: storeName,
                 menu: menu,
-                amount: amount
+                amount: amount,
+                note: note
             }
         }
     },
@@ -23,15 +24,9 @@ export const actionCreators = {
             payload: index
         }
     },
-    toggleItemCompleted: (index) =>{
-        return { 
-            type: types.TOGGLE_ITEM_COMPLETED,
-            payload: index
-        }
-    },
-    removeCompleted: () => {
+    clearOrder: ()=>{
         return {
-            type: types.REMOVE_COMPLETED,
+            type :types.CLEAR_ITEM
         }
     }
    }

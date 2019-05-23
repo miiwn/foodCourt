@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
-import { ListItem, Row, List, Left, Right, Card, CardItem } from 'native-base';
+import { ListItem, List, Left, Right, Card } from 'native-base';
 export default class OrderList extends Component {
     constructor(props) {
         super(props);
@@ -28,7 +28,7 @@ export default class OrderList extends Component {
 
     }
     render() {
-        const { orders,total } = this.props
+        const { orders, total } = this.props
 
         return (
             <View style={styles.menuList}>

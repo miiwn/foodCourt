@@ -5,19 +5,18 @@ import { actionCreators } from '../redux/actions/actionCreators';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { ListItem, Left, Right, Row, Button } from 'native-base';
-import Title from '../components/Title';
-import Description from '../components/Description';
 import OrderList from '../components/OrderList';
-import ConfirmButton from '../components/ConfirmButton';
 import ConfirmOrderModal from '../components/ConfirmOrderModal';
-import HeaderComponent from '../components/Header';
-// import console = require('console');
+import HeaderComponent from '../components/HeaderComponent';
+import { db , auth} from '../providers/FirebaseProvider';
+import Firebase from 'firebase'
 
 
 const user = {
     username: 'Miiwn',
     nickname: 'Miiwn'
 }
+
 
 class OrderPage extends Component {
     constructor(props) {
@@ -45,9 +44,17 @@ class OrderPage extends Component {
 
         this.setState({total: sum})
     }
-
-    confirmOrder =()=>{
-        alert('confirm')
+    confirmOrder =(table)=>{
+        const { orders } = this.props;
+        db.ref(`/users/${auth.currentUser.uid}/orders`).push({
+            orders: orders,
+            tableno: table.tableNo,
+            status: 'SENT',
+            create: Firebase.database.ServerValue.TIMESTAMP,
+          })
+          this.closeModal()
+          alert("Your order have been sent")
+          this.props.clearOrder();
     }
     closeModal =()=>{
         this.setState({ visible: false })
@@ -70,7 +77,7 @@ class OrderPage extends Component {
                 </Button>
                 </Row>
                 : null}
-                <ConfirmOrderModal visible={visible} order={orders} total={total} onClose={this.closeModal} />
+                <ConfirmOrderModal visible={visible} order={orders} total={total} onClose={this.closeModal} onSubmit={this.confirmOrder} />
             </View>
         );
     }
@@ -117,6 +124,10 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => ({
     orders: state.order,
 })
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(actionCreators,dispatch) ;
+   } 
+  
 
-export default connect(mapStateToProps)(OrderPage)
+export default connect(mapStateToProps,mapDispatchToProps)(OrderPage)
 

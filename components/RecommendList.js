@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet,Image, TouchableOpacity} from 'react-native';
-import Food from '../mock-data/food.json'
-import { Card, CardItem, Body, Left, Thumbnail, List, ListItem } from 'native-base'
+import { View, Text, FlatList, StyleSheet,TouchableOpacity} from 'react-native';
+
+import { Card, CardItem, Body, Left, Thumbnail } from 'native-base'
 import Title from './Title.js';
+
 class RecommendList extends Component {
   constructor(props) {
     super(props);
@@ -14,10 +15,10 @@ class RecommendList extends Component {
     this.props.renderMenuList(item)
   }
   _renderItem = ({ item }) => {
-    
     return (
       <Card style={styles.recommendContainer}>
-      <CardItem  style={styles.card}onPress={()=>this.renderMenu(item)}>
+      <TouchableOpacity onPress={()=>this.renderMenu(item)}>
+      <CardItem  style={styles.card} >
           <Left>
             <Thumbnail source={{ uri : item.uri}} />
             </Left>
@@ -25,8 +26,12 @@ class RecommendList extends Component {
               <Text style={styles.title}>
                 {item.storeName}
               </Text>
+              <Text style={styles.category}>
+                {item.category}
+              </Text>
             </Body>
       </CardItem>
+      </TouchableOpacity>
       </Card>
      )
   }
@@ -54,14 +59,14 @@ const styles = StyleSheet.create({
   },
   recommendContainer:{
     margin: 10,
-    width: 220,
+    width: 260,
     height: 80,
     // padding: 10,
     alignItems: 'center',
     justifyContent: 'center'
   },
   card: {
-    width: 200,
+    width: 240,
     height: 70,
     flexDirection: 'row',
     marginRight: 5,
@@ -81,6 +86,8 @@ const styles = StyleSheet.create({
     color: '#484848',
     fontWeight: '700',
   },
-  
+  category:{
+    fontSize: 12,
+  }
 })
 export default RecommendList;

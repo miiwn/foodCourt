@@ -1,14 +1,13 @@
 
 import React, { Component } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import Description from './Description';
+import { Text, StyleSheet } from 'react-native'
 import { Header } from 'native-base';
 
 
 export default class HeaderComponent extends Component {
 
   render() {
-    const { title, description } = this.props
+    const { title } = this.props
     return (
       <Header span style={styles.header}>
         <Text style={styles.title}> {title}</Text>

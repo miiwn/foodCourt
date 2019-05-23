@@ -27,6 +27,12 @@ export const reducer = (state = initialState, action) => {
                 order: items.filter((item, i) => i !== payload)
             }
         }
+        case types.CLEAR_ITEM:{
+            return {
+                ...state,
+                order: []
+            }
+        }
         default: {
             return state
         }

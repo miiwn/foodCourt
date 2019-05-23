@@ -10,6 +10,8 @@ import SignUpPage from '../containers/SignUpPage';
 import Loading from '../containers/Loading';
 import ProfilePage from '../containers/ProfilePage';
 import StorePage from '../containers/StorePage';
+import HistoryPage from '../containers/HistoryPage';
+import HistoryDetailPage from '../containers/HistoryDetailPage';
 
 
 
@@ -17,6 +19,9 @@ const AppNavigator = createStackNavigator(
   {
     Home: {
       screen: HomePage,
+    },
+    Store: {
+      screen: StorePage
     },
     Menu: {
       screen: MenuPage
@@ -27,17 +32,31 @@ const AppNavigator = createStackNavigator(
     // headerMode: 'none',
   }
 );
+const HistoryStack = createStackNavigator(
+  {
+    History: {
+      screen: HistoryPage,
+    },
+    HistoryDetail: {
+      screen: HistoryDetailPage
+    },
+  },
+  {
+    initialRouteName: "History",
+    // headerMode: 'none',
+  }
+);
 
 const TabNavigator = createBottomTabNavigator(
   {
     Home: {
       screen: AppNavigator
     },
-    Store: {
-      screen: StorePage
-    },
     Order:{
       screen: OrderPage
+    },
+    History:{
+      screen: HistoryStack
     },
     Profile: {
       screen: ProfilePage
@@ -52,12 +71,12 @@ const TabNavigator = createBottomTabNavigator(
         let iconName;
         if (routeName === 'Home') {
           iconName = `home`;
-         } else if(routeName==='Store'){
-           iconName = 'list-alt'
-         }else if(routeName ==='Order'){
+         } else if(routeName ==='Order'){
            iconName ='list'
          } else if(routeName ==='Profile'){
            iconName ='user'
+         } else if(routeName ==='History'){
+           iconName='history'
          }
 
         // You can return any component that you like here!
