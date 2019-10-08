@@ -14,8 +14,6 @@ class LoginPage extends Component {
       email: '',
       password: '',
       errorMessage: null,
-      progress: new Animated.Value(0),
-
     };
   }
 
